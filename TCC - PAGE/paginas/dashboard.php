@@ -10,6 +10,7 @@
 <body>
     
     <nav id="sidebar">
+        <div id="sidebar_content">
         <div id="user">
             <img src="../images/avatar_zoro.jpg" id="user_avatar" alt="Avatar do Usuário" width="200px">
 
@@ -24,6 +25,34 @@
         </div>
 
         <ul id="side_items">
+
+            <li class="side-items">
+                <a href="#">
+                    <i class="fa-solid fa-book"></i>
+                    <span class="item-description">
+                        Atividades
+                    </span>
+                </a>
+            </li>
+
+            <li class="side-items">
+                <a href="#">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <span class="item-description">
+                        Informações
+                    </span>
+                </a>
+            </li>
+
+            <li class="side-items">
+                <a href="#">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span class="item-description">
+                        FAQ
+                    </span>
+                </a>
+            </li>
+
             <li class="side-items">
                 <a href="#">
                     <i class="fa-solid fa-gear"></i>
@@ -33,6 +62,18 @@
                 </a>
             </li>
         </ul>
+
+            <button id="open_btn">
+                <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div id="logout">
+            <button id="logout_btn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span></span>
+            </button>
+        </div>
     </nav>
 
 <script src="../javascript/dashboard.js"></script>
