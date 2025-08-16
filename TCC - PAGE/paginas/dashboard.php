@@ -12,7 +12,7 @@
     <nav id="sidebar">
         <div id="sidebar_content">
         <div id="user">
-            <img src="../images/avatar_zoro.jpg" id="user_avatar" alt="Avatar do Usuário" width="200px">
+            <img src="../images/avatar_zoro.jpg" id="user_avatar" alt="Avatar do Usuário">
 
             <p id="user_infos">
                 <span class="item-description">
@@ -26,41 +26,50 @@
 
         <ul id="side_items">
 
-            <li class="side-items">
-                <a href="#">
-                    <i class="fa-solid fa-book"></i>
-                    <span class="item-description">
-                        Atividades
-                    </span>
-                </a>
-            </li>
+            <li class="side-item active">
+                    <a href="#">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span class="item-description">
+                            Dashboard
+                        </span>
+                    </a>
+                </li>
 
-            <li class="side-items">
-                <a href="#">
-                    <i class="fa-solid fa-newspaper"></i>
-                    <span class="item-description">
-                        Informações
-                    </span>
-                </a>
-            </li>
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-book"></i>
+                        <span class="item-description">
+                            Atividades
+                        </span>
+                    </a>
+                </li>
 
-            <li class="side-items">
-                <a href="#">
-                    <i class="fa-solid fa-circle-info"></i>
-                    <span class="item-description">
-                        FAQ
-                    </span>
-                </a>
-            </li>
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-newspaper"></i>
+                        <span class="item-description">
+                            Informações
+                        </span>
+                    </a>
+                </li>
 
-            <li class="side-items">
-                <a href="#">
-                    <i class="fa-solid fa-gear"></i>
-                    <span class="item-description">
-                        Configurações
-                    </span>
-                </a>
-            </li>
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <span class="item-description">
+                            FAQ
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="item-description">
+                            Configurações
+                        </span>
+                    </a>
+                </li>
         </ul>
 
             <button id="open_btn">
@@ -71,10 +80,14 @@
         <div id="logout">
             <button id="logout_btn">
                 <i class="fa-solid fa-right-from-bracket"></i>
-                <span></span>
+                <span>Logout</span>
             </button>
         </div>
     </nav>
+
+    <main>
+        <h1>Seja bem-vindo! Ao seu site de estudos</h1>
+    </main>
 
 <script src="../javascript/dashboard.js"></script>
 </body>
