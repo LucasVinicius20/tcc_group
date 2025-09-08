@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fc;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    padding: 15px;
+    border-radius: 5px 5px 0 0;
+}
+
+.faq {
+    margin-top: 20px;
+}
+
+.faq-item {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.faq-question {
+    background-color: #2563eb;
+    color: white;
+    padding: 15px 20px 15px 40px;
+    cursor: pointer;
+    position: relative;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question::before {
+    content: '+';
+    position: absolute;
+    left: 15px;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active::before {
+    content: '-';
+}
+
+.faq-answer {
+    overflow: hidden;
+    height: 0;
+    padding: 0 15px;
+    background-color: white;
+    color: #333;
+    transition: height 0.5s ease, padding 0.3s ease;
+}
+
+.contact-box {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.contact-box p {
+    font-size: 18px;
+    color: #333333;
+}
+.contact-box a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+.contact-box a:hover {
+    text-decoration: underline;
+}
