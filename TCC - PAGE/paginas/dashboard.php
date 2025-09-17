@@ -56,7 +56,7 @@
                 </li>
 
                 <li class="side-item">
-                    <a href="faq.php">
+                    <a href="../paginas/faq.php">
                         <i class="fa-solid fa-circle-info"></i>
                         <span class="item-description">
                             FAQ

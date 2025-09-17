@@ -1,7 +1,3 @@
-document.getElementById('open_btn').addEventListener('click', function(){
-    document.getElementById('sidebar').classList.toggle('open-sidebar');
-});
-
 document.addEventListener("DOMContentLoaded", function () {
     const questions = document.querySelectorAll('.faq-question');
 
