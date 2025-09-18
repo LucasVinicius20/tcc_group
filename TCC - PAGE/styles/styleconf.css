@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  color: #333;
+}
+
+.container {
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #222;
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.profile-photo {
+  margin-bottom: 2rem;
+}
+
+.foto {
+  width: 120px;
+  height: 120px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  display: inline-block;
+  margin-bottom: 1rem;
+  border: 2px solid #ccc;
+}
+
+.legendafoto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #1e90ff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.legendafoto:hover {
+  color: #007acc;
+}
+
+#upload-text {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  text-decoration: underline;
+}
+
+.input-fields fieldset {
+  border: 2px solid #1e90ff;
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: #fafafa;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #1e90ff;
+  box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.2);
+}
+
+.save-button {
+  font-size: 1.1rem;
+  padding: 0.75rem 2rem;
+  background: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 2rem;
+}
+
+.save-button:hover {
+  background: #00bfff;
+}
+
+.save-button:active {
+  transform: scale(0.98);
+}
+
+footer {
+  height: 50px;
+  margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  .save-button {
+    padding: 0.65rem 1.5rem;
+  }
+}

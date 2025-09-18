@@ -65,7 +65,7 @@
                 </li>
 
                 <li class="side-item">
-                    <a href="#">
+                    <a href="configuracaopage.php">
                         <i class="fa-solid fa-gear"></i>
                         <span class="item-description">
                             Configurações
