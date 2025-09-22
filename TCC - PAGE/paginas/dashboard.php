@@ -79,12 +79,12 @@
             </button>
         </div>
 
-        <div id="logout">
-            <button id="logout_btn">
+        <form method="POST" action="logout.php" id="logout">
+            <button id="logout_btn" >
                 <i class="fa-solid fa-right-from-bracket"></i>
                 <span>Logout</span>
             </button>
-        </div>
+        </form>
     </nav>
 
     <main>
