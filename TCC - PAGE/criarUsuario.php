@@ -27,9 +27,13 @@ try {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user && password_verify($senha, $user['senha'])) {
-            // Armazena o email na sessão
-            $_SESSION['user_email'] = $user['email'];
-            echo json_encode(['success' => true, 'message' => 'Login realizado com sucesso!']);
+            // pega o nome que veio do banco, não do POST
+            $_SESSION['usuario'] = $user['nome'];
+        
+            echo json_encode([
+                'success' => true,
+                'message' => 'Login realizado com sucesso!'
+            ]);
         } else {
             echo json_encode(['success' => false, 'message' => 'Email ou senha incorretos.']);
         }

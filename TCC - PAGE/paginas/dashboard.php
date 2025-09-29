@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['usuario'])) {
+    header("Location: ../index.php"); 
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -18,7 +27,7 @@
 
                 <p id="user_infos">
                     <span class="item-description">
-                        Roronoa Zoro
+                        <?php echo htmlspecialchars($_SESSION['usuario']); ?>
                     </span>
                     <span class="item-description">
                         Espadachim Verde
