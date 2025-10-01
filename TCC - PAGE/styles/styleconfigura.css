@@ -113,6 +113,7 @@ legend {
 }
 
 input[type="text"],
+input[type="email"],
 select {
   width: 100%;          /* ocupa toda a largura disponível */
   padding: 1rem;
@@ -137,6 +138,7 @@ select {
 }
 
 input[type="text"]:focus,
+input[type="email"]:focus,
 select:focus {
   border-color: #1e90ff;
   box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.15);

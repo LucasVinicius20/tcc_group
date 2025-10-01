@@ -1,25 +1,22 @@
 <?php
-// Importa a conexão com o banco de dados
 require 'conexao.php';
-
-// Inicia a sessão para armazenar dados do usuário logado
 session_start();
 
-// Recebe os dados via método POST
-$nome = $_POST['nome'] ?? null;
-$email = $_POST['email'] ?? null;
-$senha = $_POST['senha'] ?? null;
+// Recebe os dados via POST
+$nome = trim($_POST['nome'] ?? '');
+$email = trim($_POST['email'] ?? '');
+$senha = $_POST['senha'] ?? '';
+$categoria_programa = trim($_POST['nivel'] ?? 'Iniciante'); // valor padrão caso não seja enviado
 
-// Valida se email e senha foram enviados
+// Valida email e senha
 if (!$email || !$senha) {
     echo json_encode(['success' => false, 'message' => 'Email e senha são obrigatórios.']);
     exit;
 }
 
 try {
-    // Verifica se é login ou cadastro
+    // ===== LOGIN =====
     if (isset($_POST['login'])) {
-        // Validação de login
         $sql = "SELECT * FROM usuarios WHERE email = :email";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':email', $email);
@@ -27,18 +24,23 @@ try {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user && password_verify($senha, $user['senha'])) {
-            // pega o nome que veio do banco, não do POST
-            $_SESSION['usuario'] = $user['nome'];
-        
-            echo json_encode([
-                'success' => true,
-                'message' => 'Login realizado com sucesso!'
-            ]);
+            $_SESSION['usuario'] = $user['nome'] ?? 'Usuário';
+            // Garante que categoria_programa tenha valor
+            $_SESSION['programa_categoria'] = !empty($user['categoria_programa']) ? $user['categoria_programa'] : 'Iniciante';
+
+            echo json_encode(['success' => true, 'message' => 'Login realizado com sucesso!']);
         } else {
             echo json_encode(['success' => false, 'message' => 'Email ou senha incorretos.']);
         }
+
+    // ===== CADASTRO =====
     } elseif (isset($_POST['cadastrar'])) {
-        // Verifica se o email já está cadastrado
+        if (!$nome) {
+            echo json_encode(['success' => false, 'message' => 'Nome é obrigatório.']);
+            exit;
+        }
+
+        // Verifica email duplicado
         $sql = "SELECT COUNT(*) FROM usuarios WHERE email = :email";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':email', $email);
@@ -48,23 +50,29 @@ try {
             exit;
         }
 
-        // Cadastro de usuário
+        // Hash da senha
         $senhaHash = password_hash($senha, PASSWORD_BCRYPT);
-        $sql = "INSERT INTO usuarios (nome, email, senha) VALUES (:nome, :email, :senha)";
+
+        // Inserção no banco
+        $sql = "INSERT INTO usuarios (nome, email, senha, categoria_programa) 
+                VALUES (:nome, :email, :senha, :categoria_programa)";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':nome', $nome);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':senha', $senhaHash);
+        $stmt->bindParam(':categoria_programa', $categoria_programa);
 
         if ($stmt->execute()) {
             echo json_encode(['success' => true, 'message' => 'Usuário cadastrado com sucesso!']);
         } else {
             echo json_encode(['success' => false, 'message' => 'Erro ao cadastrar o usuário.']);
         }
+
+    // ===== AÇÃO INVÁLIDA =====
     } else {
         echo json_encode(['success' => false, 'message' => 'Ação inválida.']);
     }
+
 } catch (PDOException $e) {
     echo json_encode(['success' => false, 'message' => 'Erro: ' . $e->getMessage()]);
 }
-?>

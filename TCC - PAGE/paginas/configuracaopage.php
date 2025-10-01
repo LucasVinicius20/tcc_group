@@ -35,8 +35,8 @@ include 'menu.php';
                 </fieldset>
 
                 <fieldset>
-                    <legend>Sobrenome:</legend>
-                    <input type="text" placeholder="Digite seu sobrenome">
+                    <legend>Email:</legend>
+                    <input type="email" placeholder="Digite seu email">
                 </fieldset>
 
                 <fieldset>
