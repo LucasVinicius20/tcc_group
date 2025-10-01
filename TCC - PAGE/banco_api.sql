@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04/08/2025 às 20:24
--- Versão do servidor: 10.4.32-MariaDB
--- Versão do PHP: 8.1.25
+-- Tempo de geração: 01/10/2025 às 00:09
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,16 +32,17 @@ CREATE TABLE `usuarios` (
   `nome` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL,
-  `criado_em` timestamp NOT NULL DEFAULT current_timestamp()
+  `criado_em` timestamp NOT NULL DEFAULT current_timestamp(),
+  `imagem` longblob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `criado_em`) VALUES
-(1, '', 'ola@gmail.com', '$2y$10$bL3K86sWqGMbKW.x8G5qR.G6tEC.H7OA/YTmat/rqOJd3FI5rvjfO', '2025-05-29 23:40:08'),
-(3, 'Lucas Vinicius', 'lu@gmail.com', '$2y$10$GXK8o.skILVtmrEdbzfva.CKyZLxUGcv7HKTI7RfGv95fsNc8Fj3a', '2025-08-04 18:17:46');
+INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `criado_em`, `imagem`) VALUES
+(1, '', 'ola@gmail.com', '$2y$10$bL3K86sWqGMbKW.x8G5qR.G6tEC.H7OA/YTmat/rqOJd3FI5rvjfO', '2025-05-29 23:40:08', NULL),
+(3, 'Lucas Vinicius', 'lu@gmail.com', '$2y$10$GXK8o.skILVtmrEdbzfva.CKyZLxUGcv7HKTI7RfGv95fsNc8Fj3a', '2025-08-04 18:17:46', NULL);
 
 --
 -- Índices para tabelas despejadas

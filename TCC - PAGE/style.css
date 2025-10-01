@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -106,7 +107,7 @@ nav ul li a:hover {
     padding: 2rem;
     border-radius: 10px;
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     position: relative;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     animation: fadeIn 0.3s ease-in-out;
@@ -155,7 +156,7 @@ label {
 
 input[type="email"],
 input[type="text"],
-input[type="password"]{
+input[type="password"] {
     width: 100%;
     padding: 0.75rem 1rem;
     border: 1px solid #d1d5db;
@@ -169,16 +170,61 @@ input[type="password"]{
 
 input[type="text"]::placeholder,
 input[type="email"]::placeholder,
-input[type="password"]::placeholder{
+input[type="password"]::placeholder {
     color: #9ca3af;
     opacity: 0.8;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
-input[type="password"]:focus{
+input[type="password"]:focus {
     border-color: #2563eb;
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Estilização para o elemento <select> */
+select {
+    /* Herda o estilo de largura, padding e fonte dos inputs */
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    
+    /* Cores e bordas */
+    background-color: #f9fafb; /* Cor de fundo clara */
+    color: #333; /* Cor do texto padrão */
+    border: 1px solid #d1d5db; /* Borda padrão */
+    border-radius: 8px; /* Cantos arredondados */
+    appearance: none; /* Remove o estilo padrão do SO (para melhor controle de design) */
+    -webkit-appearance: none;
+    outline: none; 
+    /* Transições para o efeito hover/focus */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    /* Adiciona um ícone de seta customizado para indicar que é um dropdown */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%239ca3af'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z' clip-rule='evenodd' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.5em; /* Tamanho da seta */
+    padding-right: 2.5rem; /* Aumenta o padding da direita para não cobrir a seta */
+}
+
+/* Estilo de foco (Focus Style) */
+select:focus {
+    border-color: #2563eb; /* Borda azul ao focar */
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); /* Sombra suave de foco */
+}
+
+/* Estilo para a primeira opção (placeholder) */
+select option[value=""][disabled] {
+    color: #9ca3af;
+    opacity: 0.8;
+}
+
+/* Estilização das opções (Geralmente menos estilizadas devido a limitações do navegador) */
+select option {
+    background-color: #ffffff;
+    color: #333;
+    padding: 0.5rem 1rem;
 }
 
 .BtnLogin {

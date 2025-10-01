@@ -5,18 +5,17 @@ include 'menu.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configurações</title>
-    <link rel="stylesheet" href="../styles/styleconf.css">
+    <link rel="stylesheet" href="../styles/styleconfigura.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="container">
         <header class="header">
-            <img src="../tela de configuração/imgs/arrow_back_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="Voltar">
             <h3>Configurações</h3>
         </header>
 
@@ -41,10 +40,14 @@ include 'menu.php';
                 </fieldset>
 
                 <fieldset>
-                    <legend>Ocupação:</legend>
-                    <input type="text" placeholder="Digite sua ocupação">
+                    <legend>Conhecimento sobre Programação:</legend>
+                    <select>
+                        <option value="" disabled selected>Selecione seu nível</option>
+                        <option value="iniciante">Iniciante</option>
+                        <option value="medio">Médio</option>
+                        <option value="avancado">Avançado</option>
+                    </select>
                 </fieldset>
-            </section>
 
             <button class="save-button">Salvar</button>
         </main>

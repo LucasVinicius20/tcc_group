@@ -126,6 +126,15 @@
                     <label for="cadastro-senha">Senha:</label>
                     <input type="password" name="senha" id="senha" required placeholder="Digite sua senha">
                 </div>
+                <div class="form-group">
+                    <label for="nivel">Conhecimento em Programação:</label>
+                    <select name="nivel" id="nivel" required>
+                        <option value="" disabled selected>Selecione seu nível</option>
+                        <option value="iniciante">Iniciante</option>
+                        <option value="medio">Médio</option>
+                        <option value="avancado">Avançado</option>
+                    </select>
+                </div>
                 <button type="submit" name="cadastrar" id="cadastrar" class="BtnLogin">Cadastrar</button>
                 <p class="form-status" id="cadastro-status"></p>
                 <p class="form-link">Já tem uma conta? <a href="#login" id="open-login-from-cadastro">Fazer Login</a></p>

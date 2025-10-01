@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f6fa;
+  color: #333;
+}
+
+/* Container principal */
+.container {
+  padding: 2rem;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.header img {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.header img:hover {
+  transform: scale(1.1);
+}
+
+.header h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* Layout principal */
+.content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  flex-wrap: wrap; /* ajuda na responsividade */
+}
+
+/* Foto de perfil */
+.profile-photo {
+  flex: 0 0 220px;
+  text-align: center;
+}
+
+.foto {
+  width: 140px;
+  height: 140px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  border: 3px solid #d0d0d0;
+  margin: 0 auto 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.profile-photo:hover .foto {
+  border-color: #1e90ff;
+}
+
+.legendafoto {
+  color: #1e90ff;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  text-decoration: underline;
+}
+
+.legendafoto:hover {
+  color: #007acc;
+}
+
+/* Inputs */
+.input-fields {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-fields fieldset {
+  border: 1.5px solid #d0e6ff;
+  margin-bottom: 1.5rem;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  background-color: #fafbff;
+  transition: border-color 0.3s ease;
+}
+
+legend {
+  color: #1e90ff;
+  font-weight: 500;
+  padding: 0 0.5rem;
+}
+
+input[type="text"],
+select {
+  width: 100%;          /* ocupa toda a largura disponível */
+  padding: 1rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo especial para o select */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D'12'%20height%3D'8'%20viewBox%3D'0%200%2012%208'%20xmlns%3D'http://www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M6%208L0%200h12L6%208z'%20fill%3D'%231e90ff'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 12px 8px;
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: #1e90ff;
+  box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.15);
+  outline: none;
+}
+
+/* Botão salvar */
+.save-button {
+  font-size: 1.1rem;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #1e90ff, #00bfff);
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 1rem;      /* apenas espaçamento acima */
+}
+
+.save-button:hover {
+  background: linear-gradient(135deg, #007acc, #1e90ff);
+  transform: translateY(-2px);
+}
+
+.save-button:active {
+  transform: scale(0.97);
+}
+
+
+/* Rodapé */
+footer {
+  height: 40px;
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #aaa;
+  text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-photo {
+    margin-bottom: 2rem;
+  }
+
+  .input-fields {
+    width: 100%;
+  }
+
+  .save-button {
+    width: 100%; /* em telas pequenas ocupa toda a largura */
+    align-self: center;
+  }
+}
