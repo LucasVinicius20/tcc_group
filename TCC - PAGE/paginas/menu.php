@@ -5,6 +5,9 @@ if (session_status() == PHP_SESSION_NONE) {
 
 // Recebe a página atual de quem inclui o menu
 $current_page = isset($current_page) ? $current_page : '';
+$avatar = isset($_SESSION['avatar']) && !empty($_SESSION['avatar']) 
+    ? htmlspecialchars($_SESSION['avatar']) 
+    : 'default.png'; 
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +22,7 @@ $current_page = isset($current_page) ? $current_page : '';
 <nav id="sidebar">
     <div id="sidebar_content">
         <div id="user">
-            <img src="../images/avatar_zoro.jpg" id="user_avatar" alt="Avatar do Usuário">
+        <img src="<?php echo "../images_usuarios/" . $avatar; ?>" id="user_avatar" alt="Avatar do Usuário"> 
 
             <p id="user_infos">
                 <?php if(isset($_SESSION['usuario'])): ?>

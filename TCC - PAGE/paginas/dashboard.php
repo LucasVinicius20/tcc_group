@@ -4,7 +4,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
 include 'menu.php';
 ?>
 
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

@@ -25,6 +25,8 @@ try {
 
         if ($user && password_verify($senha, $user['senha'])) {
             $_SESSION['usuario'] = $user['nome'] ?? 'Usuário';
+            $_SESSION['user_id'] = $user['id'] ?? 'id';
+            $_SESSION['avatar'] = $user['imagem'] ?? 'imagem';
             // Garante que categoria_programa tenha valor
             $_SESSION['programa_categoria'] = !empty($user['categoria_programa']) ? $user['categoria_programa'] : 'Iniciante';
 
