@@ -4,10 +4,10 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 // Recebe a página atual de quem inclui o menu
-$current_page = isset($current_page) ? $current_page : '';
+$current_page = basename($_SERVER['SCRIPT_FILENAME']);
 $avatar = isset($_SESSION['avatar']) && !empty($_SESSION['avatar']) 
     ? htmlspecialchars($_SESSION['avatar']) 
-    : 'default.png'; 
+    : '../images_usuarios/default.jpg'; 
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ $avatar = isset($_SESSION['avatar']) && !empty($_SESSION['avatar'])
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/menu.css">
-    <title>Menu</title>
+    <title>Dev Start Academy - HTML & CSS</title>
 </head>
 <body>
 <nav id="sidebar">
@@ -57,21 +57,21 @@ $avatar = isset($_SESSION['avatar']) && !empty($_SESSION['avatar'])
                 </a>
             </li>
 
-            <li class="side-item <?= ($current_page == 'informacoes.php') ? 'active' : '' ?>">
-                <a href="#">
+            <li class="side-item <?= ($current_page == 'information.php') ? 'active' : '' ?>">
+                <a href="information.php">
                     <i class="fa-solid fa-newspaper"></i>
                     <span class="item-description">Informações</span>
                 </a>
             </li>
 
             <li class="side-item <?= ($current_page == 'faq.php') ? 'active' : '' ?>">
-                <a href="../paginas/faq.php">
+                <a href="faq.php">
                     <i class="fa-solid fa-circle-info"></i>
                     <span class="item-description">FAQ</span>
                 </a>
             </li>
 
-            <li class="side-item <?= ($current_page == 'configuracoespage.php') ? 'active' : '' ?>">
+            <li class="side-item <?= ($current_page == 'configuracaopage.php') ? 'active' : '' ?>">
                 <a href="configuracaopage.php">
                     <i class="fa-solid fa-gear"></i>
                     <span class="item-description">Configurações</span>

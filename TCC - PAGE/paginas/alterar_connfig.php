@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute([$nome, $categoria_programa ,$email, $avatar, $user_id]);
 
         $_SESSION['avatar'] = $avatar;
-        header('Location: dashboard.php')
+        header('Location: dashboard.php');
     } catch (PDOException $e) {
         echo "Erro ao atualizar os dados: " . $e->getMessage();
     }
