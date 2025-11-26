@@ -34,16 +34,16 @@ include 'menu.php';
 
             <div class="small-cards">
                 <div class="small-card ">
-                    <a style="color: white;" href="http://localhost/TCC%20-%20PAGE/">
+                    <a style="color: white;" href="http://localhost/TCC%20-%20PAGE/paginas/aulahtml.php">
                         <img class="image-size" src="../images/html_code_image.png" alt="Código HTML">
-                        <p><strong>Estrutura HTML Básica</strong></p>
+                        <p><strong>HTML Básico</strong></p>
                     </a>
                 </div>
 
                 <div class="small-card">
-                    <a style="color: white;" href="http://localhost/TCC%20-%20PAGE/">
+                    <a style="color: white;" href="http://localhost/TCC%20-%20PAGE/paginas/aulacss.php">
                         <img src="../images/html_code_list_image.png" alt="Código HTML">
-                        <p><strong>Lista em HTML Básica</strong></p>
+                        <p><strong>CSS Básico</strong></p>
                     </a>
                 </div>
             </div>

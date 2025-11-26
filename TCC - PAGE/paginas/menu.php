@@ -3,11 +3,10 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// Recebe a página atual de quem inclui o menu
 $current_page = basename($_SERVER['SCRIPT_FILENAME']);
-$avatar = isset($_SESSION['avatar']) && !empty($_SESSION['avatar']) 
-    ? htmlspecialchars($_SESSION['avatar']) 
-    : '../images_usuarios/default.jpg'; 
+
+// Avatar vindo da sessão (ou default)
+$avatar = !empty($_SESSION['avatar']) ? $_SESSION['avatar'] : 'default.jpg';
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +21,8 @@ $avatar = isset($_SESSION['avatar']) && !empty($_SESSION['avatar'])
 <nav id="sidebar">
     <div id="sidebar_content">
         <div id="user">
-        <img src="<?php echo "../images_usuarios/" . $avatar; ?>" id="user_avatar" alt="Avatar do Usuário"> 
+            <img src="<?php echo "../images_usuarios/" . htmlspecialchars($avatar); ?>" 
+                 id="user_avatar" alt="Avatar do Usuário">
 
             <p id="user_infos">
                 <?php if(isset($_SESSION['usuario'])): ?>
@@ -30,10 +30,7 @@ $avatar = isset($_SESSION['avatar']) && !empty($_SESSION['avatar'])
                         <?php echo htmlspecialchars($_SESSION['usuario']); ?>
                     </span>
                     <span class="item-description">
-                        <?php 
-                        // Categoria segura: se estiver vazia, mostra “Iniciante”
-                        echo htmlspecialchars(!empty($_SESSION['programa_categoria']) ? $_SESSION['programa_categoria'] : 'Iniciante'); 
-                        ?>
+                        <?php echo htmlspecialchars($_SESSION['programa_categoria'] ?? 'Iniciante'); ?>
                     </span>
                 <?php else: ?>
                     <span class="item-description">Visitante</span>
@@ -50,8 +47,15 @@ $avatar = isset($_SESSION['avatar']) && !empty($_SESSION['avatar'])
                 </a>
             </li>
 
-            <li class="side-item <?= ($current_page == 'atividades.php') ? 'active' : '' ?>">
-                <a href="#">
+            <li class="side-item <?= ($current_page == 'aulahtml.php') ? 'active' : '' ?>">
+                <a href="aulahtml.php">
+                    <i class="fa-solid fa-chalkboard"></i>
+                    <span class="item-description">Aulas</span>
+                </a>
+            </li>
+
+            <li class="side-item <?= ($current_page == 'pergunta.php') ? 'active' : '' ?>">
+                <a href="pergunta.php">
                     <i class="fa-solid fa-book"></i>
                     <span class="item-description">Atividades</span>
                 </a>

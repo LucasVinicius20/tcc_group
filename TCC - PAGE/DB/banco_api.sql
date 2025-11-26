@@ -69,6 +69,45 @@ ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
+-- cria tabela de atividades
+CREATE TABLE atividades (
+    id_atividade INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(150) NOT NULL,
+    descricao TEXT NOT NULL,
+    resposta_correta TEXT NOT NULL,
+    nivel_dificuldade ENUM('Fácil', 'Médio', 'Difícil') DEFAULT 'Fácil'
+);
+
+-- cria tabela de respostas
+CREATE TABLE respostas (
+    id_resposta INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    id_atividade INT NOT NULL,
+    codigo_enviado TEXT NOT NULL,
+    resultado ENUM('Correto', 'Incorreto') DEFAULT 'Incorreto',
+    data_envio DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_atividade) REFERENCES atividades(id_atividade) ON DELETE CASCADE
+);
+
+-- cria tabela de conquistas
+CREATE TABLE conquistas (
+    id_conquista INT AUTO_INCREMENT PRIMARY KEY,
+    nome_conquista VARCHAR(100) NOT NULL,
+    pontos_minimos INT NOT NULL
+);
+
+INSERT INTO conquistas (nome_conquista, pontos_minimos)
+VALUES
+('Iniciante', 0),
+('Aprendiz', 50),
+('Avançado', 100);
+
+-- adiciona pontos e atividades completas para usuario
+ALTER TABLE usuarios
+ADD pontos INT DEFAULT 0,
+ADD atividades_completas INT DEFAULT 0;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

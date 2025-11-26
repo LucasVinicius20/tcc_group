@@ -19,7 +19,7 @@ include 'menu.php';
             <h3>Configurações</h3>
         </header>
 
-    <form method="POST" action="alterar_connfig.php" enctype="multipart/form-data">
+    <form method="POST" action="alterarconnfig.php" enctype="multipart/form-data">
         <main class="content">
             <section class="profile-photo">
                 <div class="foto"></div>
