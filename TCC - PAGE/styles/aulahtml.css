@@ -25,10 +25,11 @@
     font-weight: 700;
   }
   
+  
   /* Seção de aulas */
   #aulas-section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-rows: 180px, 10fr;
     gap: 20px;
     padding: 40px;
   }
