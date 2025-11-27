@@ -3,39 +3,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     questions.forEach(question => {
         question.addEventListener('click', () => {
+
             const answer = question.nextElementSibling;
 
-            // Fecha todos os outros
+            // FECHA TODAS AS OUTRAS PERGUNTAS
             questions.forEach(q => {
                 const otherAnswer = q.nextElementSibling;
                 if (q !== question) {
                     q.classList.remove('active');
-                    collapseAnswer(otherAnswer);
+                    otherAnswer.classList.remove('active');
                 }
             });
 
-            // Alterna a atual
+            // ABRE/FECHA A ATUAL
             question.classList.toggle('active');
-
-            if (answer.style.height && answer.style.height !== '0px') {
-                collapseAnswer(answer);
-            } else {
-                expandAnswer(answer);
-            }
+            answer.classList.toggle('active');
         });
     });
-
-    function expandAnswer(answer) {
-        answer.style.display = 'block';
-        const fullHeight = answer.scrollHeight + "px";
-        answer.style.height = fullHeight;
-        answer.style.paddingTop = "15px";
-        answer.style.paddingBottom = "15px";
-    }
-
-    function collapseAnswer(answer) {
-        answer.style.height = '0';
-        answer.style.paddingTop = "0";
-        answer.style.paddingBottom = "0";
-    }
 });
